@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="theme-color" content="#4f46e5">
+<meta name="description" content="主任技師等任用候補者選考の確認テスト・模擬試験・○×暗記シートポータル">
+<title>【試作】2027年度 主任技師等任用候補者選考｜学習ポータル</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--text:#111827;--muted:#64748b;--border:#e2e8f0;--primary:#4f46e5;--primary-dark:#3730a3;--primary-light:#eef2ff;--shadow:0 6px 24px rgba(15,23,42,.06)}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background:var(--bg);color:var(--text)}.container{width:min(100%,940px);margin:auto;padding:0 16px}.hero{padding:38px 0 22px}.badge{display:inline-flex;padding:5px 11px;border-radius:999px;background:var(--primary-light);color:var(--primary-dark);font-size:12px;font-weight:800}h1{margin:13px 0 8px;font-size:clamp(25px,6vw,36px);line-height:1.3}.lead{margin:0;color:var(--muted);font-size:14px;line-height:1.8}.quiz-grid{display:grid;grid-template-columns:1fr;gap:14px;padding:8px 0 24px}.quiz-card{display:flex;flex-direction:column;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.14s ease;-webkit-tap-highlight-color:transparent}.quiz-card:active{transform:scale(.99)}.quiz-card:hover{border-color:#c7d2fe;box-shadow:0 10px 28px rgba(15,23,42,.09)}.card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.quiz-type{margin-bottom:5px;color:var(--primary);font-size:12px;font-weight:800;letter-spacing:.05em}.quiz-title{margin:0;font-size:19px;line-height:1.45}.question-count{flex:0 0 auto;padding:5px 9px;border:1px solid var(--border);border-radius:999px;background:#f8fafc;color:#475569;font-size:12px;font-weight:800}.quiz-description{margin:11px 0 0;color:#475569;font-size:14px;line-height:1.7;flex:1}.open-row{display:flex;align-items:center;justify-content:space-between;margin-top:17px;padding-top:13px;border-top:1px solid #edf0f5;font-size:14px;font-weight:800}.arrow{color:var(--primary);font-size:22px}.memory{border-color:#c4b5fd;background:linear-gradient(180deg,#fff,#faf9ff)}.memory .quiz-type{color:#7c3aed}.info{margin-bottom:26px;padding:16px;background:#fff;border:1px solid var(--border);border-radius:16px;color:#475569;font-size:13px;line-height:1.75}footer{padding:8px 0 calc(30px + env(safe-area-inset-bottom));color:#94a3b8;text-align:center;font-size:12px}@media(min-width:720px){.hero{padding-top:55px}.lead{font-size:15px}.quiz-grid{grid-template-columns:repeat(2,1fr);gap:18px}.quiz-card{padding:22px;min-height:245px}.quiz-title{font-size:20px}}
+/* 2027年度向けの追加導線。カードのデザインは既存ポータルを継承 */
+.phase-panel{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);border-radius:19px;padding:19px;margin:4px 0 23px}
+.phase-title{margin:0 0 6px;font-size:19px}.phase-lead{margin:0 0 13px;color:var(--muted);font-size:13px;line-height:1.75}
+.phase-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:13px}
+.phase-button{min-height:46px;background:#fff;border:1px solid var(--border);border-radius:12px;font-size:13px;font-weight:800;color:#475569;cursor:pointer}
+.phase-button[aria-pressed="true"]{background:var(--primary-light);border-color:#a5b4fc;color:var(--primary-dark)}
+.phase-output{background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:13px;min-height:112px}
+.phase-output h3{font-size:15px;margin:0 0 6px}.phase-output p{font-size:13px;line-height:1.8;color:#475569;margin:0}
+.phase-output a{display:inline-block;font-size:13px;font-weight:800;color:var(--primary);margin-top:9px;text-decoration:underline;text-underline-offset:3px}
+.archive-link{font-size:13px;color:var(--primary);font-weight:750}
+.draft-note{margin:10px 0 24px;padding:15px 16px;border:1px solid #cbd5e1;border-left:4px solid var(--primary);border-radius:14px;background:#fff;font-size:13px;line-height:1.8;color:#475569}
+.draft-note strong{color:#111827}.note-list{margin:8px 0 0;padding-left:19px}
+.section-label{font-size:13px;font-weight:800;color:#64748b;margin:0 0 12px}
+@media(max-width:520px){.phase-controls{grid-template-columns:1fr}.phase-button{min-height:42px}.phase-panel{padding:16px}}
+</style>
+</head>
+<body>
+<main class="container">
+<section class="hero">
+<span class="badge">2027年度に向けた試作ページ</span>
+<h1>主任任用選考 学習ポータル</h1>
+<p class="lead">講義・確認テスト・模擬試験の既存スケジュールはそのままに、必要な教材を選びやすく整理した試作です。新しい必須課題や追加テストは設けません。</p>
+</section>
+<div class="draft-note" role="note">
+<strong>これは配布前の試作です。</strong>
+<div>リンク先は<strong>2026年度に使用した教材</strong>です。2027年度の出題範囲、法令・規程、制度、診療報酬、正答・解説はまだ確認していません。内容確認が終わるまでは2027年度の正式教材として配布しないでください。</div>
+</div>
+<section class="phase-panel" aria-labelledby="phaseTitle">
+<h2 class="phase-title" id="phaseTitle">今の学習段階から選ぶ</h2>
+<p class="phase-lead">講義や試験の追加ではありません。決められたスケジュール内で、学習方法に迷ったときの目安です。</p>
+<div class="phase-controls" id="phaseControls" aria-label="学習段階">
+<button type="button" class="phase-button" data-phase="front" aria-pressed="true">前半の学習</button>
+<button type="button" class="phase-button" data-phase="back" aria-pressed="false">後半の学習</button>
+<button type="button" class="phase-button" data-phase="final" aria-pressed="false">試験直前</button>
+</div>
+<div class="phase-output" aria-live="polite">
+<h3 id="phaseHeading">前半の講義内容を確認する</h3>
+<p id="phaseDescription">指定された確認テストを優先し、苦手な知識だけ○×暗記シートで繰り返します。追加の課題ではありません。</p>
+<a id="phaseLink" href="https://0213mano-png.github.io/quiz1/">確認テスト前半を開く</a>
+</div>
+</section>
+<p class="section-label">教材一覧（現時点では2026年度版）</p>
+<section class="quiz-grid" aria-label="学習メニュー">
+<a class="quiz-card" href="https://0213mano-png.github.io/quiz1/"><div class="card-header"><div><div class="quiz-type">TEST 01</div><h2 class="quiz-title">確認テスト 前半</h2></div><span class="question-count">22問</span></div><p class="quiz-description">前半範囲の確認テスト。1問ずつ回答し、その場で採点・解説を確認できます。</p><div class="open-row"><span>テストを開始</span><span class="arrow">→</span></div></a>
+<a class="quiz-card" href="https://0213mano-png.github.io/quiz2/"><div class="card-header"><div><div class="quiz-type">TEST 02</div><h2 class="quiz-title">確認テスト 後半</h2></div><span class="question-count">29問</span></div><p class="quiz-description">後半範囲の確認テスト。問題一覧・進捗表示・選択肢シャッフルに対応しています。</p><div class="open-row"><span>テストを開始</span><span class="arrow">→</span></div></a>
+<a class="quiz-card" href="https://0213mano-png.github.io/quiz3/"><div class="card-header"><div><div class="quiz-type">MOCK EXAM</div><h2 class="quiz-title">模擬試験</h2></div><span class="question-count">50問</span></div><p class="quiz-description">本番を想定した50問の模擬試験。採点・解説表示・選択肢シャッフルに対応しています。</p><div class="open-row"><span>模擬試験を開始</span><span class="arrow">→</span></div></a>
+<a class="quiz-card memory" href="https://0213mano-png.github.io/quiz1_suffle/"><div class="card-header"><div><div class="quiz-type">MEMORY SHEET</div><h2 class="quiz-title">○×暗記シート</h2></div><span class="question-count">1文ずつ</span></div><p class="quiz-description">1文ずつ○×で暗記。元の設問の表示や「弱点10問」「数値10問」「ランダム10問」を活用して、各自の空き時間に任意で復習できます。</p><div class="open-row"><span>暗記を始める</span><span class="arrow">→</span></div></a>
+</section>
+<section class="info">
+<strong>来年度の使い方と改善方針</strong>
+<ul class="note-list">
+<li>講義・確認テスト・模擬試験の日程は、従来の運営方針を優先します。</li>
+<li>○×暗記シートは任意の自主学習用です。新しい提出物や必須テストにはしません。</li>
+<li>○×暗記シートの学習履歴は利用者ごとのブラウザ内に保存されます。PCとスマホ間では自動同期されません。</li>
+<li>年度更新時には、全教材の正答・解説・リンクを確認してから公開します。</li>
+</ul>
+<p style="margin:13px 0 0">比較用：<a class="archive-link" href="https://0213mano-png.github.io/quiz_portal/">2026年度の旧ポータルに戻る</a></p>
+</section>
+</main>
+<footer>主任技師等任用候補者選考<br>2027年度向け試作｜正式配布前の確認用</footer>
+<script>
+(function(){
+  var phases={
+    front:{title:"前半の講義内容を確認する",description:"指定された確認テストを優先し、苦手な知識だけ○×暗記シートで繰り返します。追加の課題ではありません。",label:"確認テスト前半を開く",href:"https://0213mano-png.github.io/quiz1/"},
+    back:{title:"後半の講義内容を確認する",description:"後半の確認テストを中心に進め、理解が曖昧な項目は○×暗記シートで復習します。新しいテストを増やす必要はありません。",label:"確認テスト後半を開く",href:"https://0213mano-png.github.io/quiz2/"},
+    final:{title:"本番形式の確認と弱点復習",description:"予定されている模擬試験に取り組み、間違いが残るところを○×暗記シートの「弱点10問」で補います。追加の模擬試験は求めません。",label:"模擬試験を開く",href:"https://0213mano-png.github.io/quiz3/"}
+  };
+  var buttons=Array.prototype.slice.call(document.querySelectorAll(".phase-button"));
+  function changePhase(phase){
+    var data=phases[phase];if(!data)return;
+    document.getElementById("phaseHeading").textContent=data.title;
+    document.getElementById("phaseDescription").textContent=data.description;
+    var link=document.getElementById("phaseLink");link.textContent=data.label;link.href=data.href;
+    buttons.forEach(function(button){button.setAttribute("aria-pressed",button.dataset.phase===phase?"true":"false");});
+  }
+  buttons.forEach(function(button){button.addEventListener("click",function(){changePhase(button.dataset.phase);});});
+})();
+</script>
+</body>
+</html>
